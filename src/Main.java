@@ -1,8 +1,6 @@
 import com.formdev.flatlaf.FlatIntelliJLaf;
 import java.io.File;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
@@ -25,51 +23,34 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        btnExit = new javax.swing.JButton();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        lb1 = new javax.swing.JLabel();
+        tfPassword = new javax.swing.JTextField();
         btnSelectFile = new javax.swing.JButton();
         lbSelection = new javax.swing.JLabel();
-        btnEncrypt = new javax.swing.JButton();
-        lbSelection1 = new javax.swing.JLabel();
-        tfPassword = new javax.swing.JTextField();
         btnStoreLoc = new javax.swing.JButton();
         lbLoc = new javax.swing.JLabel();
-        btnExit = new javax.swing.JButton();
+        btnEncrypt = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        lb2 = new javax.swing.JLabel();
+        tfPassword1 = new javax.swing.JTextField();
+        btnSelectFile1 = new javax.swing.JButton();
+        lbSelection1 = new javax.swing.JLabel();
+        btnStoreLoc1 = new javax.swing.JButton();
+        lbLoc1 = new javax.swing.JLabel();
+        btnDecrypt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximizedBounds(new java.awt.Rectangle(0, 0, 0, 0));
-        setMaximumSize(new java.awt.Dimension(392, 450));
-        setMinimumSize(new java.awt.Dimension(392, 450));
-        setPreferredSize(new java.awt.Dimension(392, 450));
+        setMaximumSize(new java.awt.Dimension(456, 420));
+        setMinimumSize(new java.awt.Dimension(456, 420));
+        setPreferredSize(new java.awt.Dimension(456, 420));
 
         jLabel1.setFont(new java.awt.Font("Liberation Sans Narrow", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("PDF Encryption");
-
-        btnSelectFile.setText("Select a PDF File to be encrypted");
-        btnSelectFile.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSelectFileActionPerformed(evt);
-            }
-        });
-
-        lbSelection.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-        btnEncrypt.setText("Encrypt");
-        btnEncrypt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEncryptActionPerformed(evt);
-            }
-        });
-
-        lbSelection1.setText("Select a suitable password");
-
-        btnStoreLoc.setText("Select a location to store the encrypted file ");
-        btnStoreLoc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnStoreLocActionPerformed(evt);
-            }
-        });
-
-        lbLoc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("PDF Encryption & Decryption");
 
         btnExit.setText("Exit");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
@@ -78,59 +59,171 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jTabbedPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+
+        lb1.setText("Select a suitable password");
+
+        btnSelectFile.setText("Select a PDF File to be encrypted");
+        btnSelectFile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSelectFileActionPerformed(evt);
+            }
+        });
+
+        lbSelection.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+
+        btnStoreLoc.setText("Select a location to store the encrypted file ");
+        btnStoreLoc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStoreLocActionPerformed(evt);
+            }
+        });
+
+        lbLoc.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+
+        btnEncrypt.setText("Encrypt");
+        btnEncrypt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEncryptActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lbLoc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbSelection, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnEncrypt)
+                            .addComponent(lb1, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnSelectFile)
+                            .addComponent(btnStoreLoc))
+                        .addGap(0, 46, Short.MAX_VALUE))
+                    .addComponent(tfPassword, javax.swing.GroupLayout.Alignment.LEADING))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lb1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnSelectFile)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbSelection, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnStoreLoc)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbLoc, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnEncrypt)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Encrypt", jPanel1);
+
+        lb2.setText("Enter the password of the PDF File");
+
+        btnSelectFile1.setText("Select the PDF File to be decrypted");
+        btnSelectFile1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSelectFile1ActionPerformed(evt);
+            }
+        });
+
+        lbSelection1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+
+        btnStoreLoc1.setText("Select a location to store the decrypted file ");
+        btnStoreLoc1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStoreLoc1ActionPerformed(evt);
+            }
+        });
+
+        lbLoc1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+
+        btnDecrypt.setText("Decrypt");
+        btnDecrypt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDecryptActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lb2)
+                    .addComponent(btnStoreLoc1)
+                    .addComponent(btnSelectFile1)
+                    .addComponent(lbSelection1, javax.swing.GroupLayout.DEFAULT_SIZE, 357, Short.MAX_VALUE)
+                    .addComponent(btnDecrypt)
+                    .addComponent(lbLoc1, javax.swing.GroupLayout.DEFAULT_SIZE, 357, Short.MAX_VALUE)
+                    .addComponent(tfPassword1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lb2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfPassword1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnSelectFile1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbSelection1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnStoreLoc1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbLoc1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(btnDecrypt)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Decrypt", jPanel2);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(70, 70, 70)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(btnSelectFile)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(lbSelection, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(tfPassword)
-                                    .addComponent(lbSelection1, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE))))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(42, 42, 42)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lbLoc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnStoreLoc))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(121, 121, 121)
-                        .addComponent(jLabel1)))
-                .addContainerGap(42, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnEncrypt)
-                .addGap(56, 56, 56)
-                .addComponent(btnExit)
-                .addGap(91, 91, 91))
+                        .addContainerGap()
+                        .addComponent(btnExit)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(89, 89, 89)
+                .addComponent(jLabel1)
+                .addContainerGap(93, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(21, 21, 21)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(lbSelection1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(btnSelectFile)
-                .addGap(5, 5, 5)
-                .addComponent(lbSelection, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnStoreLoc)
+                .addGap(26, 26, 26)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lbLoc, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnEncrypt)
-                    .addComponent(btnExit))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addComponent(btnExit)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         pack();
@@ -204,6 +297,7 @@ public class Main extends javax.swing.JFrame {
                     fileExtension = "";
                     lbSelection.setText("");
                     lbLoc.setText("");
+                    tfPassword.setText("");
                 } catch (IOException ex) {
                     JOptionPane.showMessageDialog(this, ex);
                 }
@@ -215,9 +309,64 @@ public class Main extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_btnExitActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void btnSelectFile1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectFile1ActionPerformed
+        FileNameExtensionFilter fileFilter = new FileNameExtensionFilter(null, "pdf");
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setFileFilter(fileFilter);
+        fileChooser.setDialogTitle("Choose PDF file to decrypt");
+        if (fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+            decryptFile = new File(fileChooser.getSelectedFile().getAbsolutePath());
+            fileName1 = fileChooser.getSelectedFile().getName();
+            fileExtension1 = FilenameUtils.getExtension(fileName1);
+        }
+        lbSelection1.setText(fileName1 + " is selected.");
+    }//GEN-LAST:event_btnSelectFile1ActionPerformed
+
+    private void btnStoreLoc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStoreLoc1ActionPerformed
+        JFileChooser locChooser = new JFileChooser();
+        locChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        locChooser.setDialogTitle("Choose a location to store");
+        if (locChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+            storeLoc1 = locChooser.getSelectedFile().toString();
+            lbLoc1.setText(storeLoc1);
+        }
+    }//GEN-LAST:event_btnStoreLoc1ActionPerformed
+
+    private void btnDecryptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDecryptActionPerformed
+        if (tfPassword1.getText().isEmpty() || tfPassword1.getText().isBlank()) {
+            JOptionPane.showMessageDialog(this, "No password is entered! Please enter the password.");
+        }
+        else if (fileName1.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No file is selected! Please select a file.");
+        }
+        else if (storeLoc1.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No location to store decrypted file is selected! Please select a suitable location.");
+        }
+        else {
+            String newFileName = fileName1.replace("." + fileExtension1, "_decrypted." + fileExtension1);
+            boolean check = new File(storeLoc1 + "/" + newFileName).exists();
+            if (check) {
+                JOptionPane.showMessageDialog(this, "Another file with name " + newFileName + " exists in the specified location. Please rename or relocate that file or select some other location to store, and then, click the \"Decrypt\" button to continue.");
+            } else {
+                try {          
+                    PDDocument pdd = Loader.loadPDF(decryptFile, tfPassword1.getText());
+                    pdd.setAllSecurityToBeRemoved(true);
+                    pdd.save(storeLoc1 + "/" + newFileName);
+                    pdd.close();
+                    JOptionPane.showMessageDialog(this, newFileName + " has been stored in specified location.");
+                    storeLoc1 = "";
+                    fileName1 = "";
+                    fileExtension1 = "";
+                    lbSelection1.setText("");
+                    lbLoc1.setText("");
+                    tfPassword1.setText("");
+                } catch (IOException ex) {
+                    JOptionPane.showMessageDialog(this, ex);
+                }
+            }
+        }
+    }//GEN-LAST:event_btnDecryptActionPerformed
+
     public static void main(String args[]) {
         try {
             UIManager.setLookAndFeel(new FlatIntelliJLaf());
@@ -235,15 +384,29 @@ public class Main extends javax.swing.JFrame {
     private String fileName = "";
     private String fileExtension = "";
     private PDDocument pdd;
+    private String storeLoc1 = "";
+    private String fileName1 = "";
+    private String fileExtension1 = "";
+    private File decryptFile;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDecrypt;
     private javax.swing.JButton btnEncrypt;
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnSelectFile;
+    private javax.swing.JButton btnSelectFile1;
     private javax.swing.JButton btnStoreLoc;
+    private javax.swing.JButton btnStoreLoc1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel lb1;
+    private javax.swing.JLabel lb2;
     private javax.swing.JLabel lbLoc;
+    private javax.swing.JLabel lbLoc1;
     private javax.swing.JLabel lbSelection;
     private javax.swing.JLabel lbSelection1;
     private javax.swing.JTextField tfPassword;
+    private javax.swing.JTextField tfPassword1;
     // End of variables declaration//GEN-END:variables
 }
